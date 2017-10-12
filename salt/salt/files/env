@@ -1,0 +1,7 @@
+{% set db = salt['pillar.get']('django:db', {}) %}
+DBENGINE="{{ db.engine }}"
+DBNAME="{{ db.name }}"
+DBUSER="{{ db.user }}"
+DBPASSWORD="{{ db.password }}"
+DBHOST="{{ db.host }}"
+DBPORT="{{ db.port }}"
