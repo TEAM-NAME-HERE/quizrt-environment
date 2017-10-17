@@ -1,6 +1,6 @@
 database:
   name: postgresql
-  pkgs: ['postgresql-9.5', 'postgresql-9.5-contrib']
+  pkgs: ['postgresql-9.5', 'postgresql-contrib-9.5']
   watch: 
     - file: /etc/postgresql/9.5/main/pg_hba.conf
   files:

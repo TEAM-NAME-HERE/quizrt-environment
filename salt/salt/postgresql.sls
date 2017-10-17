@@ -6,11 +6,12 @@
   pkg.installed:
     - pkgs: {{db.pkgs}}
   service.running:
-    - enabled: True
+    - enable: True
 {% if db.get('watch', False) %}
     - watch: {{db.watch}}
+{% endif %}
 
-{% for name, file in db.get('files', {}) }
+{% for name, file in db.get('files', {}).iteritems() %}
 {{name}}:
   file.managed:
     - source: {{ file.source }}
