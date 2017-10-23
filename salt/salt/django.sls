@@ -26,6 +26,9 @@ include:
     - name: {{ name }}
     - password: {{ user.password }}
     - user: postgres
+    {% for perm, val in user.get('permissions', {}).iteritems() %}
+    - {{perm}}: {{val}}
+    {% endfor %}
     - require:
       - service: postgresql 
 {% endfor %}

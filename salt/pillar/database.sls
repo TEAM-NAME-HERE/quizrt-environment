@@ -12,6 +12,8 @@ database:
   users:
     django:
       password: django
+      permissions:
+        createdb: True
   databases:
     quizrt:
       owner: django
@@ -22,7 +24,7 @@ database:
 
 django:
   db:
-    engine: django.db.backends.postgresql_psycopg2
+    engine: django.db.backends.postgresql
     name: quizrt
     user: django
     password: django 
